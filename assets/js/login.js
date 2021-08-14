@@ -1,31 +1,31 @@
-const API = "http://localhost:8080/api/login";
+import { API } from './api'
 
-const $user = document.getElementById("user");
-const $pass = document.getElementById("password");
-const $btnLogin = document.getElementById("btn-login");
+const $nombre = document.getElementById("nombre");
+const $apellidop = document.getElementById("apellidop");
+const $apellidom = document.getElementById("apellidom");
 
-const validateUser = async (event, intentos = 1) => {
-  event.preventDefault();
-  console.log($user.value);
-  console.log($pass.value);
+const validateUser = async(event, intentos = 1) => {
+    event.preventDefault();
+    console.log($user.value);
+    console.log($pass.value);
 
-  //TODO: VALIDAR USUARIO Y CONTRASEÑA VS BD
-  try {
-    const params = {
-      method: "POST",
-      mode: "cors",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        user: $user.value,
-        password: $pass.value,
-      }),
-    };
-    const res = await fetch(API, params);
-    const data = await res.json();
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
+    //TODO: VALIDAR USUARIO Y CONTRASEÑA VS BD
+    try {
+        const params = {
+            method: "POST",
+            mode: "cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                nombre: $nombre.value,
+                apellidop: $pass.value,
+            }),
+        };
+        const res = await fetch(API, params);
+        const data = await res.json();
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
 };
 
 $btnLogin.onclick((e) => validateUser(e));
