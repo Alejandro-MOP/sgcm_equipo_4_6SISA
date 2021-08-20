@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/minty/bootstrap.min.css" integrity="sha384-H4X+4tKc7b8s4GoMrylmy2ssQYpDHoqzPa9aKXbDwPoPUA3Ra8PA5dGzijN+ePnH" crossorigin="anonymous">
+    <title>Document</title>
+    <link href="../assets/styles/index.css" rel="stylesheet" type="text/css">
+</head>
+
+
+
+<body>
+
+    <header class="encabezado">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Inicio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--finHeader-->
+
+    <div class='col-md-12 d-flex justify-content-center align-items-center'>
+        <h4 class='mb-3'>Ingrese sus datos personales</h4>
+    </div>
+
+    <main class="container d-flex justify-content-center">
+        <div class="row d-flex justify-content-center mt-1 pt-2">
+            <div class="col col-md-12">
+                <form style="width: 100% " class=" border border-success  p-2">
+                    <fieldset>
+
+
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <label for="exampleInputEmail1 " class="form-label mt-2 mr-4 " style="width: 300px;">Nombre </label>
+                            <input style="width: 300px;" type="text" class="form-control " id="nombre" aria-describedby="emailHelp " placeholder="juan ">
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-3 ">
+                            <label for="exampleInputPassword1 " class="form-label mt-2 mr-4" style="width: 300px;">Apellido paterno</label>
+                            <input style="width: 300px;" type="text " class="form-control " id="apellidop" placeholder="martinez">
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-3 ">
+                            <label for="exampleInputPassword1 " class="form-label mt-2 mr-4" style="width: 300px;">Apellido materno</label>
+                            <input style="width: 300px;" type="text " class="form-control " id="apellidom" placeholder="martinez">
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <label for="exampleInputPassword1 " class="form-label mt-2 mr-4" style="width: 300px;">NSS</label>
+                            <input style="width: 300px;" type="text" class="form-control " id="NSS" placeholder="xxxxxxxxxxx">
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <label for="exampleInputPassword1 " class="form-label mt-2 mr-4" style="width: 300px;">Teléfono</label>
+                            <input style="width: 300px;" type="tel" class="form-control " id="telefono" placeholder="Ingrese número telefonico">
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <label for="exampleInputPassword1 " class="form-label mt-2 mr-4" style="width: 300px;">Código postal</label>
+                            <input style="width: 300px;" type="" class="form-control " id="CP" placeholder="xxxxx">
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <label for="exampleInputPassword1 " class="form-label mt-2 mr-4" style="width: 300px;">Curp</label>
+                            <input style="width: 300px;" type="text" class="form-control " id="CURP" placeholder="Ingrese curp">
+                        </div>
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <main class="container d-flex justify-content-center">
+        <div class="row d-flex justify-content-center mt-1 pt-2">
+            <div class="col col-md-12">
+                <form style="width:100%;" class=" border border-success p-2">
+                    <fieldset>
+
+                        <legend class="mt-2">Tipo de sangre </legend>
+                     </label>
+                
+                    <div class="form-group d-block ">
+                        <label for="exampleSelect1" class="form-label mt-4"></label>
+                        <select class="form-select" id="exampleSelect1">
+                          <option>A+</option>
+                          <option>A-</option>
+                          <option>O+</option>
+                          <option>O-</option>
+                          <option>B+</option>
+                          <option>B-</option>
+                          <option>AB+</option>
+                          <option>AB-</option>
+
+                        </select>
+                      </div>
+            
+               
+                        <legend class="mt-2">Sistema de salud</legend>
+                    </label>
+                
+                    <div class="form-group">
+                        <label for="exampleSelect2" class="form-label mt-4"></label>
+                        <select class="form-select" id="exampleSelect2">
+                          <option>Publico</option>
+                          <option>Privado</option>
+                        </select>
+                      </div>
+                  
+    
+                        <legend class="mt-1">Es alérgico a: </legend>
+                    </label>
+
+                    <div class="form-group">
+                        <label for="exampleSelect3" class="form-label mt-4"></label>
+                        <select class="form-select" id="exampleSelect3">
+                          <option>Medicamento</option>
+                          <option>Alimentos</option>
+                          <option>Pastillas</option>
+                          <option>Otros</option>
+                        </select>
+                      </div>
+                        
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <main class="container d-flex justify-content-center">
+            <div class="row d-flex justify-content-center mt-1 pt-2">
+                <div class="col col-md-12">
+                    <form style="width: 100% " class=" border border-success  p-2">
+                        <fieldset>
+
+                            <div class="d-flex justify-content-between align-items-center mb-3 ">
+                                <label for="exampleInputPassword1 " class="form-label mt-2 mr-4" style="width: 300px;">Correo electrónico</label>
+                                <input style="width: 300px;" type="email" class="form-control " id="correo_electronico" placeholder="Ingrese correo electrónico">
+                            </div>
+    
+                            <div class="d-flex justify-content-between align-items-center ">
+                                <label for="exampleInputPassword1 " class="form-label mt-2 mr-4" style="width: 300px;">Contraseña</label>
+                                <input style="width: 300px;" type="password" class="form-control " id="contraseña" placeholder="Establezca una contraseña">
+                            </div>
+                            <div class="d-flex justify-content-center pt-5">
+                                <button type="button" class="btn btn-success " style="width: 150px;">Crear cuenta</button>
+                            </div>
+                            
+        
+
+                          </fieldset>
+                </form>
+            </div>
+        </div>
+     </main>
+                
+</body>
+
+</html>
