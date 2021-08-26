@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/minty/bootstrap.min.css" integrity="sha384-H4X+4tKc7b8s4GoMrylmy2ssQYpDHoqzPa9aKXbDwPoPUA3Ra8PA5dGzijN+ePnH" crossorigin="anonymous">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/minty/bootstrap.min.css"
+        integrity="sha384-H4X+4tKc7b8s4GoMrylmy2ssQYpDHoqzPa9aKXbDwPoPUA3Ra8PA5dGzijN+ePnH" crossorigin="anonymous">
+    <title>Sistema Gestion de Citas</title>
     <link href="../assets/styles/index.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -17,29 +18,27 @@
     <header class="encabezado">
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Inicio</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
 
-                <div class="collapse navbar-collapse" id="navbarColor01">
-                    <ul class="navbar-nav me-auto">
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Citas</a>
+            <ul class="nav nav-tabs">
+                <li class="nav-item mx-2">
+                    <a class="nav-link active" data-bs-toggle="tab" href="#home">Mis citas</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link active" data-bs-toggle="tab" href="#profile">Historial Clinico</a>
+                </li>
+                <div class="dropdown mx-2">
+                    <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Mi perfil
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li>
+                            <a class="dropdown-item" href="#">ver mi perfil</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pacientes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Horario de doctores</a>
-                        </li>
-
+                        <li><a class="dropdown-item" href="#">Cerrar</a></li>
                     </ul>
-
                 </div>
-            </div>
+            </ul>
         </nav>
     </header>
 
@@ -51,38 +50,52 @@
                 <form style="width: 100% " class=" border border-success  p-5">
                     <fieldset>
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <label for="exampleInputEmail1 " class="form-label mt-2 mr-4 " style="width: 300px;">Nombre </label>
-                            <input style="width: 300px;" type="text" class="form-control " id="nombre" aria-describedby="emailHelp " placeholder="juan ">
+                            <label for="exampleInputEmail1 " class="form-label mt-2 mr-4 " style="width: 300px;">Nombre
+                            </label>
+                            <input style="width: 300px;" type="text" class="form-control " id="nombre"
+                                aria-describedby="emailHelp " placeholder="juan ">
                         </div>
 
                         <div class="d-flex justify-content-between align-items-center mb-3 ">
-                            <label for="exampleInputPassword1 " class="form-label mt-2 mr-4" style="width: 300px;">Apellido paterno</label>
-                            <input style="width: 300px;" type="text " class="form-control " id="apellidop" placeholder="martinez ">
+                            <label for="exampleInputPassword1 " class="form-label mt-2 mr-4"
+                                style="width: 300px;">Apellido paterno</label>
+                            <input style="width: 300px;" type="text " class="form-control " id="apellidop"
+                                placeholder="martinez ">
                         </div>
 
                         <div class="d-flex justify-content-between align-items-center mb-3 ">
-                            <label for="exampleInputPassword1 " class="form-label mt-2 mr-4" style="width: 300px;">Apellido materno</label>
-                            <input style="width: 300px;" type="text " class="form-control " id="apellidom" placeholder="martinez ">
+                            <label for="exampleInputPassword1 " class="form-label mt-2 mr-4"
+                                style="width: 300px;">Apellido materno</label>
+                            <input style="width: 300px;" type="text " class="form-control " id="apellidom"
+                                placeholder="martinez ">
                         </div>
 
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <label for="exampleInputPassword1 " class="form-label mt-2 mr-4" style="width: 300px;">Consultorio</label>
-                            <input style="width: 300px;" type="text" class="form-control " id="consultorio" placeholder="consultorio N">
+                            <label for="exampleInputPassword1 " class="form-label mt-2 mr-4"
+                                style="width: 300px;">Consultorio</label>
+                            <input style="width: 300px;" type="text" class="form-control " id="consultorio"
+                                placeholder="consultorio N">
                         </div>
 
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <label for="exampleInputPassword1 " class="form-label mt-2 mr-4" style="width: 300px;">Medico</label>
-                            <input style="width: 300px;" type="text" class="form-control " id="medico " placeholder="juan perez ">
+                            <label for="exampleInputPassword1 " class="form-label mt-2 mr-4"
+                                style="width: 300px;">Medico</label>
+                            <input style="width: 300px;" type="text" class="form-control " id="medico "
+                                placeholder="juan perez ">
                         </div>
 
                         <div class="d-flex justify-content-between align-items-center mb-3 ">
-                            <label for="exampleInputPassword1 " class="form-label mt-2 mr-4" style="width: 300px;">Fecha</label>
-                            <input style="width: 300px;" type="date" class="form-control " id="fecha" placeholder="00/00/00 ">
+                            <label for="exampleInputPassword1 " class="form-label mt-2 mr-4"
+                                style="width: 300px;">Fecha</label>
+                            <input style="width: 300px;" type="date" class="form-control " id="fecha"
+                                placeholder="00/00/00 ">
                         </div>
 
                         <div class="d-flex justify-content-between align-items-center ">
-                            <label for="exampleInputPassword1 " class="form-label mt-2 mr-4" style="width: 300px;">Hora</label>
-                            <input style="width: 300px;" type="time" class="form-control " id="hora" placeholder="00:00">
+                            <label for="exampleInputPassword1 " class="form-label mt-2 mr-4"
+                                style="width: 300px;">Hora</label>
+                            <input style="width: 300px;" type="time" class="form-control " id="hora"
+                                placeholder="00:00">
                         </div>
                         <div class="d-flex justify-content-center pt-5">
                             <button type="button" class="btn btn-success " style="width: 150px;">Crear cita</button>
