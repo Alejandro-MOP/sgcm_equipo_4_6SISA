@@ -1,4 +1,4 @@
-import { API } from './api'
+import { API } from "./api";
 
 const $nombre = document.getElementById("nombre");
 const $apellidom = document.getElementById("ramirez");
@@ -8,14 +8,13 @@ const $medico = document.getElementById("medico");
 const $fecha = document.getElementById("fecha");
 const $hora = document.getElementById("hora");
 
+const validateUser = async (event, intentos = 1) => {
+  event.preventDefault();
+  console.log($nombre.value);
+  console.log($apellidom.value);
 
-const validateUser = async(event, intentos = 1) => {
-    event.preventDefault();
-    console.log($nombre.value);
-    console.log($apellidom.value);
-
-    //TODO: VALIDAR USUARIO Y CONTRASEÑA VS BD
-    /** 
+  //TODO: VALIDAR USUARIO Y CONTRASEÑA VS BD
+  /** 
     try {
         const params = {
             method: "POST",
@@ -38,8 +37,6 @@ const validateUser = async(event, intentos = 1) => {
     } catch (error) {
         console.error(error);
 */
-}
-
 };
 
 $btnLogin.onclick((e) => validateUser(e));
