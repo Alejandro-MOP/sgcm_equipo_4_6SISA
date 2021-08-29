@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/minty/bootstrap.min.css"
         integrity="sha384-H4X+4tKc7b8s4GoMrylmy2ssQYpDHoqzPa9aKXbDwPoPUA3Ra8PA5dGzijN+ePnH" crossorigin="anonymous">
     <title>Sistema Gestion de Citas</title>
-    <link href="../assets/styles/index.css" rel="stylesheet" type="text/css">
+    <link href="../styles/index.css" rel="stylesheet" type="text/css">
+    <script defer src="../js/crearCuenta.js"></script>
 </head>
 
 
@@ -17,35 +18,12 @@
 
     <header class="encabezado">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <h3 class='text-white'>Ingresa tus datos para crear tu cuenta</h3>
 
-            <ul class="nav nav-tabs">
-                <li class="nav-item mx-2">
-                    <a class="nav-link active" data-bs-toggle="tab" href="#home">Mis citas</a>
-                </li>
-                <li class="nav-item mx-2">
-                    <a class="nav-link active" data-bs-toggle="tab" href="#profile">Historial Clinico</a>
-                </li>
-                <div class="dropdown mx-2">
-                    <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Mi perfil
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li>
-                            <a class="dropdown-item" href="#">ver mi perfil</a>
-                        </li>
-                        <li><a class="dropdown-item" href="#">Cerrar</a></li>
-                    </ul>
-                </div>
-            </ul>
         </nav>
     </header>
 
     <!--finHeader-->
-
-    <div class='col-md-12 d-flex justify-content-center align-items-center'>
-        <h4 class='mb-3 text-center'>Ingrese sus datos personales</h4>
-    </div>
 
     <main class="container d-flex justify-content-center">
         <div class="row d-flex justify-content-center mt-1 pt-2">
@@ -73,6 +51,17 @@
                                 style="width: 300px;">Apellido materno</label>
                             <input style="width: 300px;" type="text " class="form-control " id="apellidom"
                                 placeholder="martinez">
+                        </div>
+
+                        <div class="d-flex my-3 align-items-center">
+                            <label for="exampleInputPassword1 " class="form-label mt-2 mr-4"
+                                style="width: 300px;">Género</label>
+                            <div class="d-flex align-items-center">
+                                <select class="form-control" style='width: 300px;' id="genero">
+                                    <option>Hombre</option>
+                                    <option>Mujer</option>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="d-flex justify-content-between align-items-center mb-3">
@@ -135,12 +124,11 @@
                                 placeholder="Alcaldía">
                         </div>
 
-                        <!--TODO: agregar numero exterior e interior al domicilio-->
-
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <label for="exampleInputPassword1 " class="form-label mt-2 mr-4"
                                 style="width: 300px;">Colonia</label>
-                            <input style="width: 300px;" type="" class="form-control " id="CP" placeholder="Colonia">
+                            <input style="width: 300px;" type="" class="form-control " id="colonia"
+                                placeholder="Colonia">
                         </div>
 
 
@@ -161,8 +149,8 @@
                         </label>
 
                         <div class="form-group">
-                            <label for="exampleSelect3" class="form-label mt-2"></label>
-                            <select class="form-control w-25" id="exampleSelect1">
+                            <label for="ocupacion" class="form-label mt-2"></label>
+                            <select class="form-control w-25" id="ocupacion">
                                 <option>Trabajador</option>
                                 <option>Estudiante</option>
                                 <option>Ama de casa </option>
@@ -175,8 +163,8 @@
                         </label>
 
                         <div class="form-group">
-                            <label for="exampleSelect2" class="form-label mt-2"></label>
-                            <select class="form-control w-25" id="exampleSelect2">
+                            <label for="estado-civil" class="form-label mt-2"></label>
+                            <select class="form-control w-25" id="estado-civil">
                                 <option>Soltero</option>
                                 <option>Casado</option>
                                 <option>Viudo</option>
@@ -188,8 +176,8 @@
                         </label>
 
                         <div class="form-group d-block ">
-                            <label for="exampleSelect1" class="form-label mt-2"></label>
-                            <select class="form-control w-25" id="exampleSelect3">
+                            <label for="tipo-sangre" class="form-label mt-2"></label>
+                            <select class="form-control w-25" id="tipo-sangre">
                                 <option>A+</option>
                                 <option>A-</option>
                                 <option>O+</option>
@@ -206,8 +194,8 @@
                         </label>
 
                         <div class="form-group">
-                            <label for="exampleSelect3" class="form-label mt-2"></label>
-                            <select class="form-control w-25" id="exampleSelect4">
+                            <label for="alergia" class="form-label mt-2"></label>
+                            <select class="form-control w-25" id="alergia">
                                 <option>Anticonvulsivos</option>
                                 <option>Insulina</option>
                                 <option>Penicilina</option>
@@ -225,27 +213,28 @@
 
     </main>
 
-    <main class="container d-flex justify-content-center">
+    <main class="container d-flex justify-content-center mb-5">
         <div class="row d-flex justify-content-center mt-1 pt-2">
             <div class="col col-md-12">
                 <form style="width: 100% " class=" border border-success  p-2">
                     <fieldset>
 
                         <div class="d-flex justify-content-between align-items-center mb-3 ">
-                            <label for="exampleInputPassword1 " class="form-label mt-2 mr-4"
-                                style="width: 300px;">Correo electrónico</label>
+                            <label for="correo_electronico " class="form-label mt-2 mr-4" style="width: 300px;">Correo
+                                electrónico</label>
                             <input style="width: 300px;" type="email" class="form-control " id="correo_electronico"
                                 placeholder="Ingrese correo electrónico">
                         </div>
 
                         <div class="d-flex justify-content-between align-items-center ">
-                            <label for="exampleInputPassword1 " class="form-label mt-2 mr-4"
+                            <label for="contraseña " class="form-label mt-2 mr-4"
                                 style="width: 300px;">Contraseña</label>
                             <input style="width: 300px;" type="password" class="form-control " id="contraseña"
                                 placeholder="Establezca una contraseña">
                         </div>
                         <div class="d-flex justify-content-center pt-5">
-                            <button type="button" class="btn btn-success " style="width: 150px;">Crear cuenta</button>
+                            <button type="button" class="btn btn-success " id='btn-crear-cuenta'
+                                style="width: 150px;">Crear cuenta</button>
                         </div>
 
 

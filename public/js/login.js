@@ -1,31 +1,44 @@
-import { API } from './api'
+const API = 'http://localhost:5000';
 
-const $nombre = document.getElementById("nombre");
-const $apellidop = document.getElementById("apellidop");
-const $apellidom = document.getElementById("apellidom");
+const $user = document.getElementById('user');
+const $password = document.getElementById('password');
+const $btnLogin = document.getElementById('btn-login');
 
-const validateUser = async(event, intentos = 1) => {
-    event.preventDefault();
-    console.log($user.value);
-    console.log($pass.value);
+$btnLogin.onclick = async e => {
+	e.preventDefault();
 
-    //TODO: VALIDAR USUARIO Y CONTRASEÑA VS BD
-    try {
-        const params = {
-            method: "POST",
-            mode: "cors",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                nombre: $nombre.value,
-                apellidop: $pass.value,
-            }),
-        };
-        const res = await fetch(API, params);
-        const data = await res.json();
-        console.log(data);
-    } catch (error) {
-        console.error(error);
-    }
+	if ($password.value === '' || $user.value === '') {
+		alert('Ingresa usuario y contraseña, para poder continuar');
+		return;
+	}
+
+	try {
+		const body = {
+			user: $user.value,
+			password: $password.value,
+		};
+
+		const result = await request(`${API}/iniciar-sesion`, 'POST', body);
+
+		if (result.validacion) {
+			const result = await request(`${API}/mi-perfil`, 'POST', {
+				user: $user.value,
+			});
+			localStorage.setItem('user', JSON.stringify(result));
+			window.location.href = './perfil.html';
+		} else {
+			alert('El usuario o contraseña son incorrectos, intenta de nuevo');
+		}
+	} catch (error) {
+		console.log(error);
+	}
 };
 
-$btnLogin.onclick((e) => validateUser(e));
+const request = async (url = '', method = 'GET', data = {}) => {
+	const response = await fetch(url, {
+		method,
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify(data),
+	});
+	return response.json();
+};
