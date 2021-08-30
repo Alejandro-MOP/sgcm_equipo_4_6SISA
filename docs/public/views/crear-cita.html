@@ -11,6 +11,7 @@
     <link href="../styles/index.css" rel="stylesheet" type="text/css">
     <link href="../styles/calendar.css" rel="stylesheet" type="text/css">
     <script defer src="../js/crearCita.js"></script>
+    <link rel="shortcut icon" href="../img/linea-de-pulso.png" />
 </head>
 
 
@@ -19,14 +20,17 @@
 
     <header class="encabezado">
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1ABC9C;">
 
             <ul class="nav nav-tabs">
                 <li class="nav-item mx-2">
-                    <a class="nav-link active" data-bs-toggle="tab" href="#home">Mis citas</a>
+                    <img src="../img/linea-de-pulso.png" style="max-width:3.8rem ; max-height: ;">
                 </li>
                 <li class="nav-item mx-2">
-                    <a class="nav-link active" data-bs-toggle="tab" href="#profile">Historial Clinico</a>
+                    <a class="nav-link active" data-bs-toggle="tab" href="/">Mis citas</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link active" href="./historialClinico.html">Historial Clinico</a>
                 </li>
                 <div class="dropdown mx-2">
                     <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
@@ -35,7 +39,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <li>
-                            <a class="dropdown-item" href="#">ver mi perfil</a>
+                            <a class="dropdown-item" href="./perfil.html">ver mi perfil</a>
                         </li>
                         <li><a class="dropdown-item" href="./index.html">Cerrar</a></li>
                     </ul>
